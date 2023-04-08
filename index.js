@@ -26,7 +26,6 @@ app.post('/vectorize', upload.single('image'), async (req, res) => {
     // Convert image data to base64-encoded string
     const b64 = Buffer.from(req.file.buffer).toString('base64');
 
-    // Create meme using Weaviate client
     await client.data.creator()
       .withClassName('Skin_conditions')
       .withProperties({
